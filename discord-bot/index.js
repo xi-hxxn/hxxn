@@ -80,24 +80,6 @@ client.on('messageCreate', async message => {
             message.reply('🚫 봇붐은 아무나 못 때려요');
         }
     }
-
-    // 버튼 포함 메시지 예시
-        if (message.content === '!시작') {
-            const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = await import('discord.js');
-
-            const row = new ActionRowBuilder().addComponents(
-                new ButtonBuilder()
-                    .setCustomId('choice_open_door')
-                    .setLabel('문 열기')
-                    .setStyle(ButtonStyle.Primary),
-                new ButtonBuilder()
-                    .setCustomId('choice_stay')
-                    .setLabel('기다리기')
-                    .setStyle(ButtonStyle.Secondary),
-            );
-
-            await message.reply({ content: '어두운 방 안에 있습니다. 어떻게 할까요?', components: [row] });
-        }
     });
 
 const interactionHandlers = [];
